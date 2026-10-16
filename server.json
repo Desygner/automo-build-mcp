@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "build.automo/automo-build",
+  "title": "Automo Build",
+  "description": "Operate Automo Build, the AI app builder, as yourself: projects, builds, QA, security, deployments.",
+  "version": "0.1.1",
+  "websiteUrl": "https://automo.build",
+  "repository": {
+    "url": "https://github.com/Desygner/automo-build-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.automo.build/mcp{profile}",
+      "variables": {
+        "profile": {
+          "description": "Catalog size (the full catalog, the core operator set, read-only observation), with /builders appended to route every instruction through builder subagents.",
+          "isRequired": false,
+          "default": "",
+          "choices": [
+            "",
+            "/core",
+            "/observe",
+            "/builders",
+            "/core/builders"
+          ]
+        }
+      }
+    }
+  ]
+}

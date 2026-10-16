@@ -1,0 +1,32 @@
+{
+  "name": "automo-build",
+  "version": "0.1.0",
+  "description": "Connect your AI tool to Automo Build, the AI app builder: one command wires the MCP server into Claude Code, Cursor or Codex.",
+  "homepage": "https://automo.build",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Desygner/automo-build-mcp.git",
+    "directory": "npm-cli"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "automo-build": "bin/automo-build.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "automo",
+    "mcp",
+    "ai",
+    "app-builder",
+    "agent"
+  ],
+  "scripts": {
+    "test": "node bin/automo-build.mjs --help >/dev/null && node bin/automo-build.mjs connect --print claude-code >/dev/null && echo ok"
+  }
+}

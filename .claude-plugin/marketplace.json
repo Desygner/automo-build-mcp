@@ -1,0 +1,14 @@
+{
+  "name": "automo-build",
+  "owner": {
+    "name": "Automo",
+    "url": "https://automo.build"
+  },
+  "plugins": [
+    {
+      "name": "automo-build",
+      "source": "./plugins/claude-code",
+      "description": "Operate Automo Build, the AI app builder, as yourself: projects, builds, QA, security, deployments."
+    }
+  ]
+}

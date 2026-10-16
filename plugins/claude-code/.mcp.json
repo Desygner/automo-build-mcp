@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "automo-build": {
+      "type": "http",
+      "url": "https://mcp.automo.build/mcp"
+    }
+  }
+}

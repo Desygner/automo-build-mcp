@@ -1,0 +1,33 @@
+{
+  "name": "automo-build",
+  "version": "0.1.1",
+  "description": "Operate Automo Build, the AI app builder, from ChatGPT and Codex: build, diagnose, test and ship your projects, and ask its CTO, Doctor, Security and QA agents.",
+  "author": {
+    "name": "Automo",
+    "url": "https://automo.build"
+  },
+  "homepage": "https://automo.build",
+  "repository": "https://github.com/Desygner/automo-build-mcp",
+  "license": "MIT",
+  "keywords": [
+    "automo",
+    "automo build",
+    "app builder",
+    "deploy",
+    "supabase",
+    "mcp"
+  ],
+  "skills": [
+    "./skills/automo-build-operator"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Automo Build",
+    "category": "Developer tools",
+    "capabilities": [
+      "Build apps",
+      "Diagnose deployments",
+      "Publish to production"
+    ]
+  }
+}

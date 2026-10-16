@@ -1,0 +1,21 @@
+{
+  "name": "automo-build",
+  "version": "0.1.1",
+  "description": "Operate Automo Build, the AI app builder, from Claude: build, diagnose, test and ship your projects, and ask its CTO, Doctor, Security and QA agents.",
+  "homepage": "https://automo.build",
+  "author": {
+    "name": "Automo",
+    "url": "https://automo.build"
+  },
+  "license": "MIT",
+  "keywords": [
+    "automo",
+    "automo build",
+    "app builder",
+    "deploy",
+    "supabase",
+    "mcp"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}
