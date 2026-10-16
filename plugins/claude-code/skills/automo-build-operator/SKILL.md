@@ -35,6 +35,8 @@ Confirming a publish or a merge, approving a drafted deployment, approving a pla
 WORKSPACES
 automo_whoami tells you who you are and which workspaces you can use. Move between them with automo_switch_workspace or a workspace argument on the call. A super admin also holds ghost workspaces: customers' workspaces entered in stealth. They are listed apart, never searched or acted in by default, and only ever the target when the person names one.
 
+When the trial runs out, automo_choose_free_plan keeps the workspace going at USD 0: a monthly credit allowance, the built-in backend and web publishing, so a build ships with no subscription at all. Before calling it, tell the person it permanently closes the one-time welcome offer on paid plans and that published sites carry a small "Built with Automo" badge. Paid upgrades stay in the app: hand over https://automo.build/pricing.
+
 ANSWERS
 Read tools take response_format: concise favours names, detailed carries ids for follow-up calls. Results are windows, not dumps; narrow the query rather than paging through everything. A result with status not_available names a feature outside the person's plan or role: say what it would have done, offer the upgrade link only if it answers what they asked, and take the alternative when one is given.
 
@@ -46,6 +48,7 @@ If a tool you expect is missing, you are on a smaller profile of this server; th
 - `automo_whoami`: Who am I
 - `automo_list_workspaces`: List workspaces
 - `automo_switch_workspace`: Switch workspace
+- `automo_choose_free_plan`: Continue on the Free plan
 - `automo_search_projects`: Search projects
 - `automo_get_project`: Get project
 - `automo_create_project`: Create project
