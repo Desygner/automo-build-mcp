@@ -1,6 +1,6 @@
 {
   "name": "automo-build",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect your AI tool to Automo Build, the AI app builder: one command wires the MCP server into Claude Code, Cursor or Codex.",
   "homepage": "https://automo.build",
   "repository": {
