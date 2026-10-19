@@ -1,8 +1,8 @@
 # Automo Build MCP server
 
-[Automo Build](https://automo.build) is an AI app builder. Describe software in plain language and get a real React, TypeScript and Supabase application, tested, reviewed and deployed to a public URL. This server lets your AI tool operate it as you: create projects, prompt the builder, ask the CTO, Doctor, Security and QA agents, and publish.
+[Automo Build](https://automo.build) gives your AI tool somewhere to send the work. Hand a feature to a cloud builder and it runs in parallel, off your machine, while you keep going. Every app comes with its own database, backend and hosting, so it is live in production with nothing to set up. This server lets your AI tool operate it as you: create projects, hand off builds, ask the CTO, Doctor, Security and QA agents, and publish.
 
-It is free to start: a trial, then a USD 0 Free plan with a monthly credit allowance, the built-in backend and web publishing.
+It is free to start: a trial, then a USD 0 Free plan with a monthly credit allowance, a built-in database and web publishing.
 
 ## Connect
 
