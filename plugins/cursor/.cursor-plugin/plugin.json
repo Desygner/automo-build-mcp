@@ -1,0 +1,22 @@
+{
+  "name": "automo-build",
+  "displayName": "Automo Build",
+  "version": "0.1.1",
+  "description": "Build, test and ship real apps with Automo Build, the AI app builder: projects, builds, QA, security and deployments, free to start.",
+  "author": {
+    "name": "Automo",
+    "url": "https://automo.build"
+  },
+  "homepage": "https://automo.build",
+  "repository": "https://github.com/Desygner/automo-build-mcp",
+  "license": "MIT",
+  "keywords": [
+    "automo",
+    "automo build",
+    "app builder",
+    "deploy",
+    "supabase",
+    "mcp"
+  ],
+  "logo": "assets/logo.png"
+}
