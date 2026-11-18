@@ -73,7 +73,8 @@ if [ "$NEED_REG" = 1 ]; then
   [ -n "${MCP_PRIVATE_KEY:-}" ] || fail "MCP_PRIVATE_KEY is empty in .env"
   command -v mcp-publisher >/dev/null || fail "mcp-publisher is not installed (RELEASING.md, tools)"
   mcp-publisher validate
-  MCP_PRIVATE_KEY="$MCP_PRIVATE_KEY" mcp-publisher login dns --domain "$DOMAIN"
+  # The flag, not only the environment: mcp-publisher before 1.9 reads the key from the flag alone.
+  MCP_PRIVATE_KEY="$MCP_PRIVATE_KEY" mcp-publisher login dns --domain "$DOMAIN" --private-key "$MCP_PRIVATE_KEY"
   mcp-publisher publish
   say "published $SERVER_LOCAL to the MCP registry"
 else
