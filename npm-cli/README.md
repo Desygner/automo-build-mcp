@@ -23,3 +23,18 @@ programmatically per https://automo.build/auth.md.
 - Overview for agents: https://automo.build/llms.txt
 - OpenAPI description: https://mcp.automo.build/openapi.json
 - Agent registration: https://automo.build/auth.md
+
+## git
+
+Every Automo Build project on the current runtime is a git remote:
+
+```sh
+npx automo-build login       # sign in in the browser, once per computer
+npx automo-build git-setup   # tell git to use that sign-in for git.automo.build
+git clone https://git.automo.build/p/<project-id>.git
+```
+
+Pushes are merged into the project between agent turns and show up in its chat. Signing in asks only for
+`git:read` and `git:write`; the tokens live in `~/.config/automo-build/credentials.json`, readable by you
+only, and are refreshed as needed. `npx automo-build logout` forgets them. A personal access token from
+the project's settings works too, as the password.

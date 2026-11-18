@@ -1,7 +1,7 @@
 {
   "name": "automo-build",
   "displayName": "Automo Build",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Build, test and ship real apps with Automo Build, the AI app builder: projects, builds, QA, security and deployments, free to start.",
   "author": {
     "name": "Automo",

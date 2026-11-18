@@ -3,13 +3,17 @@
   "name": "build.automo/automo-build",
   "title": "Automo Build",
   "description": "Operate Automo Build, the AI app builder, as yourself: projects, builds, QA, security, deployments.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "websiteUrl": "https://automo.build",
   "repository": {
     "url": "https://github.com/Desygner/automo-build-mcp",
     "source": "github"
   },
   "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.automo.build/mcp"
+    },
     {
       "type": "streamable-http",
       "url": "https://mcp.automo.build/mcp{profile}",

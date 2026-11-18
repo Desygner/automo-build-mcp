@@ -4,6 +4,11 @@
 
 It is free to start: a trial, then a USD 0 Free plan with a monthly credit allowance, a built-in database and web publishing.
 
+## Two ways to use it
+
+- **Automo builds it.** Describe the app; Automo Build's agents write, test and ship it.
+- **You build it, Automo runs it.** Your own agent writes the code and pushes it with git. Automo Build gives it a live preview on every push, a backend (database with access rules, sign-in, files, server functions) and a public address. The `automo-build-host` skill, or the `automo_get_hosting_kit` tool, tells the agent what to build before it writes the first file.
+
 ## Connect
 
 The server is remote, so there is nothing to install or run. It speaks Streamable HTTP at:
@@ -44,7 +49,7 @@ Narrower catalogs live at `/mcp/core` (the core operator set) and `/mcp/observe`
 - OpenAPI: https://mcp.automo.build/openapi.json
 - Server card: https://mcp.automo.build/.well-known/mcp-server-card.json
 - Privacy policy: https://automo.build/privacy-policy
-- Support: support@automo.ai
+- Support: build@automo.ai
 
 ## What is in this repository
 

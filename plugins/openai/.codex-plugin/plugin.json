@@ -1,7 +1,7 @@
 {
   "name": "automo-build",
-  "version": "0.1.1",
-  "description": "Operate Automo Build, the AI app builder, from ChatGPT and Codex: build, diagnose, test and ship your projects, and ask its CTO, Doctor, Security and QA agents.",
+  "version": "0.2.0",
+  "description": "Operate Automo Build, the AI app builder, from ChatGPT and Codex: build, diagnose, test and ship your projects, ask its CTO, Doctor, Security and QA agents, or host the app your own agent writes: preview, backend and publish in one place.",
   "author": {
     "name": "Automo",
     "url": "https://automo.build"

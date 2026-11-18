@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "automo-build",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Operate Automo Build, the AI app builder, as yourself: projects, builds, QA, security, deployments.",
   "author": {
     "name": "Automo",
@@ -10,5 +10,5 @@
   "homepage": "https://automo.build",
   "repository": "https://github.com/Desygner/automo-build-mcp",
   "license": "MIT",
-  "keywords": ["automo", "mcp", "app-builder", "deploy", "agent"]
+  "keywords": ["automo", "mcp", "app-builder", "deploy", "hosting", "backend", "agent"]
 }

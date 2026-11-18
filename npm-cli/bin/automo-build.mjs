@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 // The Automo Build CLI: wires the MCP server into the AI tool you already
 // use. The server is remote (https://mcp.automo.build/mcp) with OAuth
-// sign-in, so "connecting" is client configuration, nothing more — this tool
-// never sees credentials.
+// sign-in, so "connecting" is client configuration, nothing more — that path
+// never sees credentials. `login` (git.mjs) is the one that does: it signs this
+// computer in so git can reach git.automo.build, and keeps the tokens in a file
+// only you can read.
 
 import { spawnSync } from 'node:child_process';
 
@@ -52,6 +54,9 @@ Usage:
   npx automo-build connect [${Object.keys(CLIENTS).join('|')}]
   npx automo-build connect --print <client>   show the steps without running anything
   npx automo-build links                      the machine-readable surface
+  npx automo-build login                      sign in, so git can reach git.automo.build
+  npx automo-build git-setup                  tell git to use this sign-in for git.automo.build
+  npx automo-build logout                     forget the sign-in on this computer
   npx automo-build --help
 
 The server: ${SERVER_URL} (Streamable HTTP, OAuth sign-in, scoped tokens).`);
@@ -95,6 +100,18 @@ const [cmd, ...rest] = process.argv.slice(2);
 if (!cmd || cmd === '--help' || cmd === 'help' || cmd === '-h') help();
 else if (cmd === 'connect') connect(rest);
 else if (cmd === 'links') links();
+else if (['login', 'logout', 'git-setup', 'git-credential'].includes(cmd)) {
+  const git = await import('./git.mjs');
+  try {
+    if (cmd === 'login') await git.login();
+    else if (cmd === 'logout') git.logout();
+    else if (cmd === 'git-setup') git.gitSetup();
+    else await git.gitCredential(rest[0]);
+  } catch (e) {
+    console.error(`automo-build: ${e?.message ?? e}`);
+    process.exitCode = 1;
+  }
+}
 else {
   console.log(`Unknown command '${cmd}'.`);
   help();
