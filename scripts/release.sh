@@ -62,8 +62,15 @@ if [ "$NEED_NPM" = 1 ]; then
   RC="$(mktemp)"; trap 'rm -f "$RC"' EXIT
   # The token is named, not written: npm expands ${NPM_TOKEN} from the environment when it reads the file.
   printf '%s\n' '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > "$RC"
-  (cd npm-cli && NPM_TOKEN="$NPM_TOKEN" npm publish --userconfig "$RC")
-  say "published automo-build $CLI_LOCAL to npm"
+  # npm takes a few minutes to list a new version, so a second run can find this one already sent.
+  # That answer (409, "previously staged" or "previously published") means done, not failed.
+  if OUT="$(cd npm-cli && NPM_TOKEN="$NPM_TOKEN" npm publish --userconfig "$RC" 2>&1)"; then
+    say "published automo-build $CLI_LOCAL to npm"
+  elif printf '%s' "$OUT" | grep -qiE 'previously (staged|published)|cannot publish over'; then
+    say "automo-build $CLI_LOCAL is already on npm (still being listed)"
+  else
+    printf '%s\n' "$OUT" >&2; fail "npm publish failed"
+  fi
 else
   say "npm is up to date"
 fi
