@@ -12,7 +12,7 @@ scripts/release.sh           # publish npm and the MCP registry
 4. `scripts/release.sh`, then `--check` must say "everything is published".
 
 **Do not edit generated files.** Only these are written by hand: `AGENTS.md`, `plugin.json`, `npm-cli/`,
-`.claude-plugin/`, `scripts/`, `plugins/*/assets/`, `openai-review.md`, this file.
+`.claude-plugin/`, `scripts/`, `plugins/*/assets/`, this file.
 
 **New machine:** install `mcp-publisher`, copy `.env.example` to `.env`, fill the two values.
 
@@ -30,7 +30,7 @@ scripts/release.sh           # publish npm and the MCP registry
 1. `scripts/openai-zip.sh`, then upload the ZIP at platform.openai.com/plugins.
 2. The portal shows a domain token. Set it as `OPENAI_APPS_CHALLENGE` on the server and deploy; the server then
    answers it at `https://mcp.automo.build/.well-known/openai-apps-challenge`.
-3. Review details: `openai-review.md`, a test account with no second sign-in step, a video walkthrough.
+3. Review details: the test cases are in the manifest. Add a test account with no second sign-in step, a video walkthrough.
 4. Submit. After approval, press Publish plugin.
 
 Official steps: https://developers.openai.com/apps-sdk/deploy/submission

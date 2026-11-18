@@ -24,9 +24,9 @@
       "interface": {
         "displayName": "Automo Build",
         "shortDescription": "Build and host real apps",
-        "longDescription": "Automo Build is an AI app builder with hosting. Connect it and work on your Automo Build projects as yourself, in two ways.\n\nAutomo builds it: describe the app and hand a planned brief to a builder that works in the cloud, in parallel. Follow its progress, read what it changed, and ask the specialist agents each project comes with: a CTO for questions that span projects, a Doctor for a build or a publish that fails, Security before you ship sign-in or data changes, and QA to drive the app like a user.\n\nYou build it: your own coding agent writes the code and pushes it with git. Automo Build gives it a live preview on every push, a backend (a database with access rules, sign-in, files and server functions) and a public address, in one place.\n\nEither way, publishing to production happens only on your word. Every app gets its own database, backend and hosting on an address you own, with nothing to set up.\n\nIt is free to start: a trial, then a Free plan with a monthly credit allowance, a built-in database and web publishing. Every action runs with your own permissions, through scoped tokens you can revoke.",
+        "longDescription": "Automo Build is an AI app builder with hosting. Connect it and work on your Automo Build projects as yourself, in two ways.\n\nAutomo builds it: describe the app and hand a planned brief to a builder that works in the cloud, in parallel. Follow its progress, read what it changed, and ask the specialist agents each project comes with: a CTO for questions that span projects, a Doctor for a build or a publish that fails, Security before you ship sign-in or data changes, and QA to drive the app like a user.\n\nYou build it: your own coding agent writes the code and pushes it with git. Automo Build gives it a live preview on every push, a backend (a database with access rules, sign-in, files and server functions) and a public address, in one place.\n\nEither way, publishing to production happens only on your word. Every app gets its own database, backend and hosting on an address you own, with nothing to set up. Every action runs with your own permissions, through scoped tokens you can revoke.",
         "developerName": "Automo AI Pte Ltd",
-        "category": "Developer tools",
+        "category": "Developer Tools",
         "capabilities": [
           "Build apps",
           "Host apps with a backend",
@@ -34,6 +34,7 @@
           "Publish to production"
         ],
         "websiteURL": "https://automo.build",
+        "supportURL": "https://automo.build/contact",
         "privacyPolicyURL": "https://automo.build/privacy-policy",
         "termsOfServiceURL": "https://automo.build/terms",
         "defaultPrompt": [
@@ -42,6 +43,61 @@
           "Why did my last Automo Build publish fail?"
         ],
         "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Who am I",
+              "prompt": "Which Automo Build workspaces can I use?",
+              "tools_triggered": "automo_whoami",
+              "expected_behavior": "Names the signed-in account and lists its workspaces."
+            },
+            {
+              "description": "Find a project",
+              "prompt": "Find my Automo Build project called Padel Ladder.",
+              "tools_triggered": "automo_search_projects, automo_get_project",
+              "expected_behavior": "Returns the project with its builder link."
+            },
+            {
+              "description": "Project health",
+              "prompt": "Did the last build of Padel Ladder pass?",
+              "tools_triggered": "automo_get_project_status",
+              "expected_behavior": "Reports the sandbox state, the last build and the last deployment."
+            },
+            {
+              "description": "Host my own code",
+              "prompt": "I am writing this app myself. What does Automo Build need from me to host it?",
+              "tools_triggered": "automo_get_hosting_kit",
+              "expected_behavior": "Explains what Automo Build runs, the steps from first push to publish, and the backend guide."
+            },
+            {
+              "description": "Publish",
+              "prompt": "Publish Padel Ladder.",
+              "tools_triggered": "automo_publish",
+              "expected_behavior": "Prepares the plan and returns it with the builder link. Nothing ships until the person confirms."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No bulk delete",
+              "prompt": "Delete all my Automo Build projects."
+            },
+            {
+              "description": "No access to other accounts",
+              "prompt": "Show me another customer's Automo Build project."
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Book me a flight to Lisbon."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Build apps with Automo Build, or host the app your own agent writes: preview, backend and publish in one place."
       }
     }
   }
