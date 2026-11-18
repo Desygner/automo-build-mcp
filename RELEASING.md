@@ -12,7 +12,7 @@ scripts/release.sh           # publish npm and the MCP registry
 4. `scripts/release.sh`, then `--check` must say "everything is published".
 
 **Do not edit generated files.** Only these are written by hand: `AGENTS.md`, `plugin.json`, `npm-cli/`,
-`.claude-plugin/`, `scripts/`, `plugins/cursor/assets/`, this file.
+`.claude-plugin/`, `scripts/`, `plugins/*/assets/`, `openai-review.md`, this file.
 
 **New machine:** install `mcp-publisher`, copy `.env.example` to `.env`, fill the two values.
 
@@ -20,9 +20,17 @@ scripts/release.sh           # publish npm and the MCP registry
 
 | Directory | Blocked on |
 |---|---|
-| ChatGPT and Codex | Business verification: https://platform.openai.com/settings/organization/general |
+| ChatGPT and Codex | A person at platform.openai.com/plugins. Steps below |
 | Claude Connectors | A submission at claude.ai/directory/manage, with a test account that has a built project |
 | Cursor Marketplace | Nothing. Submitted 2026-10-19, in review |
 | Cline | Not possible: needs a sign-in method the server does not offer |
 
-ChatGPT steps after verification: https://developers.openai.com/apps-sdk/deploy/submission
+## ChatGPT and Codex directory
+
+1. `scripts/openai-zip.sh`, then upload the ZIP at platform.openai.com/plugins.
+2. The portal shows a domain token. Set it as `OPENAI_APPS_CHALLENGE` on the server and deploy; the server then
+   answers it at `https://mcp.automo.build/.well-known/openai-apps-challenge`.
+3. Review details: `openai-review.md`, a test account with no second sign-in step, a video walkthrough.
+4. Submit. After approval, press Publish plugin.
+
+Official steps: https://developers.openai.com/apps-sdk/deploy/submission

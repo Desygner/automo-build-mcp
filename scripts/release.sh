@@ -19,7 +19,7 @@ json() { node -e "const j=JSON.parse(require('fs').readFileSync(process.argv[1],
 CLI_LOCAL="$(json npm-cli/package.json version)"
 SERVER_LOCAL="$(json server.json version)"
 PLUGIN_LOCAL="$(json plugins/claude-code/.claude-plugin/plugin.json version)"
-for f in plugin.json plugins/cursor/.cursor-plugin/plugin.json plugins/openai/.codex-plugin/plugin.json; do
+for f in plugin.json plugins/cursor/.cursor-plugin/plugin.json plugins/openai/plugin.json; do
   [ "$(json "$f" version)" = "$PLUGIN_LOCAL" ] || fail "$f is not at plugin version $PLUGIN_LOCAL"
 done
 

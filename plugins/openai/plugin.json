@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "automo-build",
+  "version": "0.2.0",
+  "description": "Operate Automo Build, the AI app builder, from ChatGPT and Codex: build, diagnose, test and ship your projects, ask its CTO, Doctor, Security and QA agents, or host the app your own agent writes: preview, backend and publish in one place.",
+  "author": {
+    "name": "Automo",
+    "url": "https://automo.build"
+  },
+  "homepage": "https://automo.build",
+  "repository": "https://github.com/Desygner/automo-build-mcp",
+  "license": "MIT",
+  "keywords": [
+    "automo",
+    "automo build",
+    "app builder",
+    "deploy",
+    "hosting",
+    "backend",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Automo Build",
+        "shortDescription": "Build and host real apps",
+        "longDescription": "Automo Build is an AI app builder with hosting. Connect it and work on your Automo Build projects as yourself, in two ways.\n\nAutomo builds it: describe the app and hand a planned brief to a builder that works in the cloud, in parallel. Follow its progress, read what it changed, and ask the specialist agents each project comes with: a CTO for questions that span projects, a Doctor for a build or a publish that fails, Security before you ship sign-in or data changes, and QA to drive the app like a user.\n\nYou build it: your own coding agent writes the code and pushes it with git. Automo Build gives it a live preview on every push, a backend (a database with access rules, sign-in, files and server functions) and a public address, in one place.\n\nEither way, publishing to production happens only on your word. Every app gets its own database, backend and hosting on an address you own, with nothing to set up.\n\nIt is free to start: a trial, then a Free plan with a monthly credit allowance, a built-in database and web publishing. Every action runs with your own permissions, through scoped tokens you can revoke.",
+        "developerName": "Automo AI Pte Ltd",
+        "category": "Developer tools",
+        "capabilities": [
+          "Build apps",
+          "Host apps with a backend",
+          "Diagnose deployments",
+          "Publish to production"
+        ],
+        "websiteURL": "https://automo.build",
+        "privacyPolicyURL": "https://automo.build/privacy-policy",
+        "termsOfServiceURL": "https://automo.build/terms",
+        "defaultPrompt": [
+          "Build me a booking app for my studio and put it online",
+          "Host the app in this repository on Automo Build",
+          "Why did my last Automo Build publish fail?"
+        ],
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
